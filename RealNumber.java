@@ -19,10 +19,10 @@ public class RealNumber{
   *Special case: if one is exactly zero, the other must be exactly zero.
   */
   public boolean equals(RealNumber other){
-    if (value == 0){
+    if (value == 0 || other.getValue() == 0){
       return true;
     }
-    else if ((other.getValue() - value) / value <= 0.00001){
+    else if (Math.abs(other.getValue() - value) / value <= 0.000001){
       return true;
     }
     return false;
